@@ -75,9 +75,9 @@ export default function HowItWorks() {
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {steps.map((step, index) => (
           <div key={step.title} className="relative">
-            {index !== steps.length - 1 && (
+            {/* {index !== steps.length - 1 && (
               <div className="absolute right-[-12px] top-10 hidden h-px w-full bg-gradient-to-r from-white/30 to-transparent md:block" />
-            )}
+            )} */}
             <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6">
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${step.accent} opacity-0 transition duration-500 group-hover:opacity-100`}

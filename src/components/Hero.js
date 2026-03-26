@@ -34,7 +34,7 @@ export default function Hero() {
             See How It Works
           </a>
         </div>
-        <div className="grid gap-6 pt-10 sm:grid-cols-3">
+        {/* <div className="grid gap-6 pt-10 sm:grid-cols-3">
           {[
             { label: "Avg. streak", value: "19 days" },
             { label: "Total commitments", value: "8,214" },
@@ -48,7 +48,7 @@ export default function Hero() {
               <div className="text-2xl font-semibold">{stat.value}</div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import DashboardMobileMock from "./mock/DashboardMobileMock";
 import AIMentorMobileMock from "./mock/AIMentorMobileMock";
 import SquadMobileMock from "./mock/SquadMobileMock";
@@ -40,11 +37,6 @@ const previews = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
 export default function ProductPreview() {
   return (
     <section className="relative mx-auto w-full max-w-6xl px-6 py-24">
@@ -60,16 +52,12 @@ export default function ProductPreview() {
 
       <div className="mt-12 space-y-20">
         {previews.map((preview, index) => (
-          <motion.div
+          <div
             key={preview.title}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: index * 0.05 }}
-            className={`grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] ${
+            className={`animate-fade-up grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] ${
               index % 2 === 1 ? "lg:grid-cols-[1.1fr_1fr]" : ""
             }`}
+            style={{ animationDelay: `${index * 0.08}s` }}
           >
             <div
               className={`space-y-4 ${
@@ -86,14 +74,14 @@ export default function ProductPreview() {
                 Pact preview
               </div>
             </div>
-            <motion.div
-              className={`animate-float ${index % 2 === 1 ? "lg:order-1" : ""}`}
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 120, damping: 12 }}
+            <div
+              className={`animate-float transition hover:scale-[1.02] ${
+                index % 2 === 1 ? "lg:order-1" : ""
+              }`}
             >
               {preview.component}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         ))}
       </div>
     </section>

@@ -1,6 +1,34 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function SuccessPage() {
+  const [status, setStatus] = useState("");
+
+  const handleShare = async () => {
+    const fallbackUrl =
+      typeof window !== "undefined" ? window.location.origin : "";
+    const shareUrl = process.env.NEXT_PUBLIC_SHARE_URL || fallbackUrl;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "Pact — Commit to the real thing",
+          text: "I just joined the Pact early access. Join me and make the commitment real.",
+          url: shareUrl,
+        });
+        setStatus("Shared successfully.");
+        return;
+      }
+
+      await navigator.clipboard.writeText(shareUrl);
+      setStatus("Link copied to clipboard.");
+    } catch (error) {
+      setStatus("Share failed. Try copying the link manually.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#05060a] text-white">
       <div className="mx-auto flex w-full max-w-2xl flex-col items-center px-6 py-24 text-center">
@@ -14,7 +42,11 @@ export default function SuccessPage() {
           You&apos;ve taken the first step most people never do — committing.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <button className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10">
+          <button
+            type="button"
+            onClick={handleShare}
+            className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
+          >
             Share with friends
           </button>
           <Link
@@ -24,6 +56,11 @@ export default function SuccessPage() {
             Return Home
           </Link>
         </div>
+        {status ? (
+          <p className="mt-4 text-xs uppercase tracking-[0.3em] text-gray-400">
+            {status}
+          </p>
+        ) : null}
       </div>
     </div>
   );

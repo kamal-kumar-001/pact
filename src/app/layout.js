@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "pact — Commit to the real thing",
+  title: "Pact — Commit to the real thing",
   description:
     "Pact is a commitment platform for habits with real stakes, AI accountability, and squads.",
 };

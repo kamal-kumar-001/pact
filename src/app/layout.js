@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       data-arp=""
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth`}
     >
-      <body className="min-h-full bg-[#05060a] font-sans text-white antialiased">
+      <body className="min-h-full bg-[#05060a] font-sans text-white antialiased leading-relaxed">
         {children}
       </body>
     </html>

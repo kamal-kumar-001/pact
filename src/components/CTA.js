@@ -5,15 +5,18 @@ export default function CTA() {
         <h2 className="text-3xl font-semibold text-white sm:text-4xl">
           Are You Serious About Change?
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-300">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-200">
           Pact is for people who don&apos;t want another motivational app. Make a real
           commitment and prove it.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-zinc-200">
+          <a
+            href="/join"
+            className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-zinc-200 animate-pulse-soft"
+          >
             Join the Waitlist
-          </button>
-          <div className="text-xs uppercase tracking-[0.3em] text-zinc-500">
+          </a>
+          <div className="text-xs uppercase tracking-[0.3em] text-gray-400">
             No spam. No excuses.
           </div>
         </div>

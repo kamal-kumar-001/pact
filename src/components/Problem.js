@@ -17,7 +17,7 @@ export default function Problem() {
   return (
     <section className="mx-auto w-full max-w-6xl px-6 py-20">
       <div className="flex flex-col gap-4">
-        <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
+        <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
           The real problem
         </p>
         <h2 className="text-3xl font-semibold text-white sm:text-4xl">
@@ -34,7 +34,9 @@ export default function Problem() {
               <span className="text-lg">◎</span>
             </div>
             <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-            <p className="mt-2 text-sm text-zinc-300">{item.body}</p>
+            <p className="mt-2 text-sm leading-relaxed text-gray-200">
+              {item.body}
+            </p>
           </div>
         ))}
       </div>

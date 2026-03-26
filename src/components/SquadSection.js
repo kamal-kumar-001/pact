@@ -6,13 +6,13 @@ export default function SquadSection() {
       <div className="rounded-3xl border border-white/10 bg-white/5 p-10 lg:p-14">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="flex flex-col gap-4">
-            <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
               Squads
             </p>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">
               Build momentum with people who refuse to let you drift.
             </h2>
-            <p className="text-base text-zinc-300">
+            <p className="text-base leading-relaxed text-gray-200">
               Create teams, share goals, and surface your progress. Social pressure
               becomes the fuel that keeps you consistent.
             </p>
@@ -28,7 +28,7 @@ export default function SquadSection() {
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-black/60 p-6">
-            <div className="text-xs uppercase tracking-[0.3em] text-zinc-500">
+            <div className="text-xs uppercase tracking-[0.3em] text-gray-400">
               Squad challenge
             </div>
             <div className="mt-4 space-y-4">
@@ -42,7 +42,7 @@ export default function SquadSection() {
                   className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4"
                 >
                   <span className="text-sm text-white">{item}</span>
-                  <span className="text-xs text-zinc-400">12 members</span>
+                  <span className="text-xs text-gray-400">12 members</span>
                 </div>
               ))}
             </div>

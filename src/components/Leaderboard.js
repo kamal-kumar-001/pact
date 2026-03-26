@@ -10,13 +10,13 @@ export default function Leaderboard() {
     <section className="mx-auto w-full max-w-6xl px-6 py-20">
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="flex flex-col gap-4">
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
+          <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
             Leaderboards
           </p>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
             Turn progress into public proof.
           </h2>
-          <p className="text-base text-zinc-300">
+          <p className="text-base leading-relaxed text-gray-200">
             Keep it private for focus or go public for accountability. Every streak
             is visible, every miss is clear.
           </p>
@@ -28,7 +28,7 @@ export default function Leaderboard() {
               <button className="rounded-full bg-white px-3 py-1 text-black">
                 Public
               </button>
-              <button className="rounded-full px-3 py-1 text-zinc-400">
+              <button className="rounded-full px-3 py-1 text-gray-400">
                 Private
               </button>
             </div>
@@ -47,7 +47,7 @@ export default function Leaderboard() {
                     <div className="text-sm font-semibold text-white">
                       {leader.name}
                     </div>
-                    <div className="text-xs text-zinc-400">Momentum track</div>
+                    <div className="text-xs text-gray-400">Momentum track</div>
                   </div>
                 </div>
                 <div className="text-sm font-semibold text-emerald-300">

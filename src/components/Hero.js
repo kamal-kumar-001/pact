@@ -9,21 +9,21 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pb-24 pt-20">
-        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-zinc-300">
+        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.2em] text-gray-400">
           Built for ruthless follow-through
         </div>
         <div className="flex flex-col gap-6">
           <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Stop Breaking Promises to Yourself.
           </h1>
-          <p className="max-w-2xl text-lg text-zinc-300 sm:text-xl">
+          <p className="max-w-2xl text-lg leading-relaxed text-gray-200 sm:text-xl">
             Commit to your goals. Put real stakes on your habits. Become unstoppable.
           </p>
         </div>
         <div className="flex flex-col gap-4 sm:flex-row">
           <a
-            className="group inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-zinc-200"
-            href="#waitlist"
+            className="group inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-zinc-200 animate-pulse-soft"
+            href="/join"
           >
             Join Early Access
           </a>
@@ -44,7 +44,7 @@ export default function Hero() {
               key={stat.label}
               className="rounded-2xl border border-white/10 bg-white/5 p-5 text-white"
             >
-              <div className="text-sm text-zinc-400">{stat.label}</div>
+              <div className="text-sm text-gray-400">{stat.label}</div>
               <div className="text-2xl font-semibold">{stat.value}</div>
             </div>
           ))}

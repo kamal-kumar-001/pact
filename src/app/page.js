@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Problem from "../components/Problem";
 import Features from "../components/Features";
+import ProductPreview from "../components/ProductPreview";
 import HowItWorks from "../components/HowItWorks";
 import AImentor from "../components/AImentor";
 import SquadSection from "../components/SquadSection";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Problem />
         <Features />
+        <ProductPreview />
         <HowItWorks />
         <AImentor />
         <SquadSection />

@@ -37,6 +37,13 @@ const featureOptions = [
   "Community Challenges",
 ];
 
+const sectionBadge = (label) => (
+  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-gray-400">
+    <span className="h-2 w-2 rounded-full bg-emerald-400" />
+    {label}
+  </div>
+);
+
 export default function JoinPage() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -104,11 +111,10 @@ export default function JoinPage() {
 
   return (
     <div className="min-h-screen bg-[#05060a] text-white">
-      <div className="mx-auto flex w-full max-w-3xl flex-col px-6 py-20">
-        <div className="flex flex-col gap-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
-            Pact Early Access
-          </p>
+      <div className="relative mx-auto flex w-full max-w-4xl flex-col px-6 py-20">
+        <div className="absolute left-1/2 top-8 -z-10 h-48 w-80 -translate-x-1/2 rounded-full bg-sky-400/10 blur-3xl" />
+        <div className="flex flex-col gap-4">
+          {sectionBadge("Pact early access")}
           <h1 className="text-3xl font-semibold sm:text-4xl">
             Reserve your spot in the pact.
           </h1>
@@ -118,31 +124,43 @@ export default function JoinPage() {
           </p>
         </div>
 
-        <div className="mt-8 flex items-center gap-3">
-          {[
-            { label: "Step 1", active: true },
-            { label: "Step 2", active: true },
-            { label: "Step 3", active: true },
-          ].map((step) => (
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          {["Step 1", "Step 2", "Step 3"].map((step, index) => (
             <div
-              key={step.label}
-              className={`flex-1 rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-center ${
-                step.active
-                  ? "bg-white/10 text-white"
-                  : "bg-transparent text-gray-400"
-              }`}
+              key={step}
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-center text-xs uppercase tracking-[0.25em] text-gray-200"
             >
-              {step.label}
+              {step}
+              <span className="ml-2 text-[10px] text-gray-400">
+                {index === 0 ? "Basics" : index === 1 ? "Validation" : "Psych"}
+              </span>
             </div>
           ))}
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="mt-10 space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10"
+          className="mt-10 space-y-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_0_60px_rgba(56,189,248,0.08)] sm:p-10"
         >
           <section className="space-y-4">
-            <h2 className="text-lg font-semibold text-white">Basic info</h2>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/60 text-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.35)]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path
+                    d="M6 7h12M6 12h12M6 17h8"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-white">Basic info</h2>
+                <p className="text-sm text-gray-400">
+                  Help us tailor your accountability plan.
+                </p>
+              </div>
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="flex flex-col gap-2 text-sm text-gray-200">
                 Name
@@ -184,9 +202,32 @@ export default function JoinPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-lg font-semibold text-white">
-              Habit struggle validation
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/60 text-sky-300 shadow-[0_0_18px_rgba(56,189,248,0.35)]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path
+                    d="M5 12h14"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M12 5v14"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-white">
+                  Habit struggle validation
+                </h2>
+                <p className="text-sm text-gray-400">
+                  Tell us what keeps slipping.
+                </p>
+              </div>
+            </div>
             <label className="flex flex-col gap-2 text-sm text-gray-200">
               What habit do you struggle to maintain?
               <textarea
@@ -226,9 +267,31 @@ export default function JoinPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-lg font-semibold text-white">
-              Commitment psychology
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/60 text-indigo-300 shadow-[0_0_18px_rgba(129,140,248,0.35)]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path
+                    d="M7 8h10v8H7z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <path
+                    d="M9 8V6a3 3 0 0 1 6 0v2"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-white">
+                  Commitment psychology
+                </h2>
+                <p className="text-sm text-gray-400">
+                  This helps us calibrate your stakes.
+                </p>
+              </div>
+            </div>
             <div className="space-y-3 text-sm text-gray-200">
               <p>Would you risk money to stay accountable?</p>
               <div className="flex flex-wrap gap-3">
@@ -316,7 +379,24 @@ export default function JoinPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-lg font-semibold text-white">Feature interest</h2>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/60 text-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.35)]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path
+                    d="M6 7h12M6 12h12M6 17h8"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-white">Feature interest</h2>
+                <p className="text-sm text-gray-400">
+                  What should we prioritize first?
+                </p>
+              </div>
+            </div>
             <div className="grid gap-3 sm:grid-cols-2">
               {featureOptions.map((option) => (
                 <label
@@ -340,9 +420,32 @@ export default function JoinPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-lg font-semibold text-white">
-              Your deal-breaker feature
-            </h2>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/60 text-sky-300 shadow-[0_0_18px_rgba(56,189,248,0.35)]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path
+                    d="M6 12h12"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M12 6v12"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-white">
+                  Your deal-breaker feature
+                </h2>
+                <p className="text-sm text-gray-400">
+                  What makes Pact impossible to quit?
+                </p>
+              </div>
+            </div>
             <label className="flex flex-col gap-2 text-sm text-gray-200">
               What feature would make Pact impossible for you to quit?
               <textarea

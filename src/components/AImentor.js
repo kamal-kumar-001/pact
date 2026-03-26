@@ -1,12 +1,31 @@
 export default function AImentor() {
   return (
-    <section id="ai-mentor" className="mx-auto w-full max-w-6xl px-6 py-20">
+    <section
+      id="ai-mentor"
+      className="relative mx-auto w-full max-w-6xl px-6 py-20"
+    >
+      <div className="absolute left-10 top-10 -z-10 h-40 w-40 rounded-full bg-sky-400/10 blur-3xl" />
       <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-black/40 to-black/80 p-10 lg:p-14">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex flex-col gap-4">
-            <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
-              AI mentor
-            </p>
+            <div className="flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-gray-400">
+              <span>AI mentor</span>
+              <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-black/60 text-sky-300 shadow-[0_0_18px_rgba(56,189,248,0.35)]">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
+                  <path
+                    d="M7 8h10v6H7z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <path
+                    d="M9 16h6"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+            </div>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">
               A coach that adapts faster than your excuses.
             </h2>
@@ -42,7 +61,7 @@ export default function AImentor() {
               ))}
             </div>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-black/60 p-6">
+          <div className="rounded-3xl border border-white/10 bg-black/60 p-6 shadow-[0_0_40px_rgba(56,189,248,0.12)]">
             <div className="flex items-center justify-between text-xs text-gray-400">
               <span>Mentor Console</span>
               <span className="rounded-full bg-emerald-500/20 px-2 py-1 text-emerald-300">

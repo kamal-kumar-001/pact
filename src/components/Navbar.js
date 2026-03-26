@@ -12,7 +12,7 @@ export default function Navbar() {
           href="#"
           className="text-base font-semibold tracking-tight text-white"
         >
-          pact
+          Pact
         </a>
 
         <div className="hidden items-center gap-8 text-sm text-gray-200 md:flex">

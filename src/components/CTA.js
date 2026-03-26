@@ -1,6 +1,10 @@
 export default function CTA() {
   return (
-    <section id="waitlist" className="mx-auto w-full max-w-6xl px-6 py-24">
+    <section
+      id="waitlist"
+      className="relative mx-auto w-full max-w-6xl px-6 py-24"
+    >
+      <div className="absolute left-1/2 top-10 -z-10 h-36 w-72 -translate-x-1/2 rounded-full bg-sky-400/10 blur-3xl" />
       <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-white/10 via-white/5 to-transparent p-10 text-center sm:p-14">
         <h2 className="text-3xl font-semibold text-white sm:text-4xl">
           Are You Serious About Change?

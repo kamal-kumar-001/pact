@@ -11,11 +11,9 @@ export default function AboutPage() {
             themselves.
           </h1>
           <p className="text-base leading-relaxed text-gray-200">
-            Most habit apps celebrate streaks but forget the hard part: real
-            accountability. Pact is a commitment engine that uses stakes, social
-            pressure, and adaptive coaching to help you follow through when
-            motivation fades. It turns goals into contracts, and contracts into
-            action.
+            PACT is a discipline enforcement system. It turns goals into
+            contracts and demands proof before anything counts. Accountability
+            is real because consequences are real.
           </p>
         </div>
 
@@ -23,10 +21,9 @@ export default function AboutPage() {
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
             <h2 className="text-xl font-semibold text-white">The Idea</h2>
             <p className="mt-4 text-sm leading-relaxed text-gray-200">
-              Pact combines financial consequences, public accountability, and AI
-              coaching to keep you consistent. You define a goal, choose your
-              stakes, and Pact makes sure the consequence is real. The result is
-              a system that makes quitting harder than showing up.
+              PACT combines proof verification, enforcement triggers, and AI
+              pattern detection to keep execution brutal and consistent. You
+              define a pact, choose your stakes, and PACT enforces the outcome.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {[
@@ -71,9 +68,9 @@ export default function AboutPage() {
               </div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-gray-200">
-              I&apos;m building Pact for people like me who want a serious system
-              that turns intention into execution. If you have ideas, feedback, or
-              want early access, reach out anytime.
+              I&apos;m building PACT for people who want execution, not motivation.
+              If you have ideas, feedback, or want early access, reach out
+              anytime.
             </p>
           </div>
         </div>

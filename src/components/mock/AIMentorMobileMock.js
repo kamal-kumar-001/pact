@@ -3,27 +3,19 @@ import IphoneFrame from "./IphoneFrame";
 const messages = [
   {
     role: "ai",
-    text: "Your consistency dropped this week. Let’s correct it today.",
+    text: "You fail most on Sundays. Recommend lighter pact.",
     time: "08:04",
   },
   {
     role: "user",
-    text: "I missed two mornings. I’m slipping.",
-    time: "08:06",
+    text: "I can handle that. Adjust it.",
+    time: "08:05",
   },
   {
     role: "ai",
-    text: "Recommend reducing goal difficulty by 10% and shifting check-in to 6:30 AM.",
-    time: "08:07",
+    text: "Done. Sunday target reduced by 15%.",
+    time: "08:06",
   },
-];
-
-const tabs = [
-  { label: "Home" },
-  { label: "Squad" },
-  { label: "Mentor", active: true },
-  { label: "Leaderboard" },
-  { label: "Profile" },
 ];
 
 export default function AIMentorMobileMock() {
@@ -32,15 +24,15 @@ export default function AIMentorMobileMock() {
       <div className="flex min-h-[640px] flex-col gap-4 bg-gradient-to-b from-[#0f172a] via-[#0b0f1c] to-[#0a0c16] px-5 pb-6 pt-10 text-white">
         <div className="flex items-center justify-between text-xs text-gray-400">
           <span>9:41 AM</span>
-          <span>Mentor Online</span>
+          <span>AI Insight</span>
         </div>
 
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
-            AI Mentor
+            Failure patterns
           </p>
           <h3 className="mt-2 text-xl font-semibold text-white">
-            Accountability thread
+            Adaptive analysis
           </h3>
         </div>
 
@@ -66,53 +58,36 @@ export default function AIMentorMobileMock() {
               </div>
             </div>
           ))}
-          <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-sm text-gray-200">
-            <div className="flex items-center gap-1">
-              {[0, 1, 2].map((dot) => (
-                <span
-                  key={dot}
-                  className="h-2 w-2 rounded-full bg-emerald-400/80"
-                  style={{ animation: "pulse 1.5s ease-in-out infinite", animationDelay: `${dot * 0.2}s` }}
-                />
-              ))}
-            </div>
-            <span>Mentor is typing</span>
-          </div>
         </div>
 
         <div className="grid gap-3">
           <div className="rounded-2xl border border-white/10 bg-black/60 p-4">
             <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
-              Daily analysis
+              Weak day detected
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-gray-200">
-              Morning focus improved 12% after earlier bedtime prompts.
-            </p>
+            <p className="mt-2 text-sm text-gray-200">Sunday · 68% fail rate</p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-black/60 p-4">
             <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
-              Consistency score
+              Adjustment
             </p>
-            <div className="mt-3 flex items-end gap-2">
-              <span className="text-2xl font-semibold text-white">78</span>
-              <span className="text-xs uppercase tracking-[0.3em] text-gray-400">
-                /100
-              </span>
-            </div>
-            <div className="mt-3 h-2 rounded-full bg-white/10">
-              <div className="h-2 w-[78%] rounded-full bg-indigo-400/80" />
-            </div>
+            <p className="mt-2 text-sm text-gray-200">
+              Reduced target by 15% for Sunday.
+            </p>
           </div>
         </div>
 
         <div className="mt-auto rounded-2xl border border-white/10 bg-black/50 px-4 py-3">
           <div className="grid grid-cols-5 text-center text-[10px] uppercase tracking-[0.25em] text-gray-400">
-            {tabs.map((tab) => (
-              <div
-                key={tab.label}
-                className={tab.active ? "text-emerald-300" : ""}
-              >
-                {tab.label}
+            {[
+              "Home",
+              "Proof",
+              "Mentor",
+              "Graph",
+              "Profile",
+            ].map((tab, index) => (
+              <div key={tab} className={index === 2 ? "text-emerald-300" : ""}>
+                {tab}
               </div>
             ))}
           </div>

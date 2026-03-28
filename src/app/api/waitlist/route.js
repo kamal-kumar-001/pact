@@ -14,6 +14,7 @@ export async function POST(request) {
       maxRisk,
       motivation,
       desiredFeature,
+      proofPreference,
       features,
     } = payload || {};
 
@@ -37,6 +38,7 @@ export async function POST(request) {
       maxRisk,
       motivation,
       desiredFeature: desiredFeature || "",
+      proofPreference: proofPreference || "",
       features: Array.isArray(features) ? features : [],
       createdAt: new Date(),
     });

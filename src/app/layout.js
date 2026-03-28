@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Pact — Commit to the real thing",
+  title: "PACT — Discipline Enforcement System",
   description:
-    "Pact is a commitment platform for habits with real stakes, AI accountability, and squads.",
+    "PACT enforces the promises you make to yourself with proof, enforcement, and accountability.",
 };
 
 export default function RootLayout({ children }) {

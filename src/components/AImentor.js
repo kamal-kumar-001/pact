@@ -9,44 +9,28 @@ export default function AImentor() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-gray-400">
-              <span>AI mentor</span>
-              <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-black/60 text-sky-300 shadow-[0_0_18px_rgba(56,189,248,0.35)]">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
-                  <path
-                    d="M7 8h10v6H7z"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                  />
-                  <path
-                    d="M9 16h6"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
+              <span>Adaptive AI Mentor</span>
             </div>
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-              A coach that adapts faster than your excuses.
+              AI That Learns Your Failure Patterns.
             </h2>
             <p className="text-base leading-relaxed text-gray-200">
-              Pact&apos;s AI mentor studies your behavior, adjusts difficulty, and checks in
-              daily. It learns which patterns make you quit and interrupts them before
-              they spiral.
+              It detects your weak days, adjusts difficulty automatically, and
+              recommends behavioral strategy changes that keep you executing.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
                 {
+                  title: "Detects weak days",
+                  body: "Flags patterns before they become misses.",
+                },
+                {
                   title: "Adaptive difficulty",
-                  body: "Smart escalations that keep you challenged, not crushed.",
+                  body: "Lowers the load when failure risk spikes.",
                 },
                 {
-                  title: "Daily accountability",
-                  body: "Tight check-ins that force you to answer the day.",
-                },
-                {
-                  title: "Behavior analysis",
-                  body: "Insights that reveal why you slip and how to fix it.",
+                  title: "Strategy shifts",
+                  body: "Suggests new routines and triggers.",
                 },
               ].map((item) => (
                 <div
@@ -63,28 +47,31 @@ export default function AImentor() {
           </div>
           <div className="rounded-3xl border border-white/10 bg-black/60 p-6 shadow-[0_0_40px_rgba(56,189,248,0.12)]">
             <div className="flex items-center justify-between text-xs text-gray-400">
-              <span>Mentor Console</span>
+              <span>AI Insight</span>
               <span className="rounded-full bg-emerald-500/20 px-2 py-1 text-emerald-300">
-                Active
+                Live
               </span>
             </div>
             <div className="mt-6 space-y-4">
-              {["Morning check-in", "Pattern detected", "Adjustment deployed"].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
-                  >
-                    <div className="h-10 w-10 rounded-full border border-white/10 bg-white/10" />
-                    <div>
-                      <div className="text-sm font-semibold text-white">{item}</div>
-                      <div className="text-xs text-gray-400">
-                        AI prompt delivered
-                      </div>
-                    </div>
-                  </div>
-                )
-              )}
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-sm font-semibold text-white">
+                  "You fail most on Sundays. Recommend lighter pact."
+                </div>
+                <div className="mt-2 text-xs text-gray-400">Pattern detection</div>
+              </div>
+              {[
+                "Weak day detected · Sun",
+                "Difficulty adjusted · -15%",
+                "Strategy shift deployed",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
+                >
+                  <div className="h-10 w-10 rounded-full border border-white/10 bg-white/10" />
+                  <div className="text-sm text-white">{item}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

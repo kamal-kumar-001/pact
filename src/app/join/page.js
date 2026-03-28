@@ -37,6 +37,14 @@ const featureOptions = [
   "Community Challenges",
 ];
 
+const proofOptions = [
+  "Photo",
+  "Video",
+  "GPS Tracking",
+  "Screen Tracking",
+  "Manual Check-in Only",
+];
+
 const sectionBadge = (label) => (
   <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-gray-400">
     <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -58,6 +66,7 @@ export default function JoinPage() {
     maxRisk: "",
     motivation: "",
     desiredFeature: "",
+    proofPreference: "",
     features: [],
   });
 
@@ -229,16 +238,16 @@ export default function JoinPage() {
               </div>
             </div>
             <label className="flex flex-col gap-2 text-sm text-gray-200">
-              What habit do you struggle to maintain?
+              What action do you struggle to prove consistently?
               <textarea
                 value={form.habit}
                 onChange={(event) => updateField("habit", event.target.value)}
                 className="min-h-[120px] rounded-xl border border-white/10 bg-black/60 px-4 py-3 text-white outline-none transition focus:border-white/40"
-                placeholder="Example: daily deep work, running, learning a language"
+                placeholder="Example: daily deep work, gym sessions, morning run"
               />
             </label>
             <div className="space-y-2 text-sm text-gray-200">
-              <p>How many times have you failed building this habit?</p>
+              <p>How many times have you failed to prove it?</p>
               <div className="flex flex-wrap gap-3">
                 {failureOptions.map((option) => (
                   <label
@@ -412,6 +421,59 @@ export default function JoinPage() {
                     type="checkbox"
                     checked={form.features.includes(option)}
                     onChange={() => toggleFeature(option)}
+                    className="h-4 w-4 rounded border-white/40 bg-black"
+                  />
+                </label>
+              ))}
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/60 text-indigo-300 shadow-[0_0_18px_rgba(129,140,248,0.35)]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path
+                    d="M6 12h12"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M12 6v12"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-white">
+                  Proof preference
+                </h2>
+                <p className="text-sm text-gray-400">
+                  What type of proof would you submit?
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {proofOptions.map((option) => (
+                <label
+                  key={option}
+                  className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-sm transition ${
+                    form.proofPreference === option
+                      ? "border-white/40 bg-white/10 text-white"
+                      : "border-white/10 text-gray-400"
+                  }`}
+                >
+                  <span>{option}</span>
+                  <input
+                    type="radio"
+                    name="proofPreference"
+                    value={option}
+                    checked={form.proofPreference === option}
+                    onChange={(event) =>
+                      updateField("proofPreference", event.target.value)
+                    }
                     className="h-4 w-4 rounded border-white/40 bg-black"
                   />
                 </label>

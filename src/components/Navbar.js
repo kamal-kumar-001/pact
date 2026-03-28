@@ -17,7 +17,7 @@ export default function Navbar() {
           <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-emerald-300 shadow-[0_0_16px_rgba(52,211,153,0.35)]">
             <PactLogo className="h-4 w-4" />
           </span>
-          Pact
+          PACT
         </a>
 
         <div className="hidden items-center gap-8 text-sm text-gray-200 md:flex">
